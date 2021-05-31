@@ -15,11 +15,7 @@ public class ClientController {
     public ClientController(ClientRepository clientRepository){
         this.clientRepository=clientRepository;
     }
-    @AllArgsConstructor @Data
-    class User{
-        private String mail;
-        private String password;
-    }
+
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
     public Client Register (@RequestBody Map<String , String> json){
