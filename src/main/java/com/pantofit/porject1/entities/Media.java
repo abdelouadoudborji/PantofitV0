@@ -24,8 +24,7 @@ public class Media {
     private String Code;
     @Column(length = 75)
     private String path;
-
-  /*  @ManyToOne
-    private Salle salle;*/
+    @ManyToOne
+    private Salle salle;
 }
 
