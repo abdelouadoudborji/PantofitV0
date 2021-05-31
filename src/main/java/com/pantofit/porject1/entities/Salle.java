@@ -21,7 +21,11 @@ public class Salle {
     @Column(length = 75)
     private String name;
     @Column(length = 75)
-    private String address;
+    private String description;
+    @Column(length = 75)
+    private String altitude;
+    @Column(length = 75)
+    private String longitude;
     @Column(length = 75)
     private String addressmail;
     @Column(length = 75)
