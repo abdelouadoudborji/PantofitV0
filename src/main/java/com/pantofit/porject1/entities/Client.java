@@ -31,4 +31,10 @@ public class Client {
     @OneToMany(fetch = FetchType.EAGER,mappedBy = "client")
     private List<Abonnement> AbonnementList ;
 
+
+    public Client(String email,String password){
+        this.address_mail=email;
+        this.password=password;
+    }
+
 }
