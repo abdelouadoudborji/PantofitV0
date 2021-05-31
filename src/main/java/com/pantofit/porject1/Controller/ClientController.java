@@ -2,10 +2,12 @@ package com.pantofit.porject1.Controller;
 
 import com.pantofit.porject1.dao.ClientRepository;
 import com.pantofit.porject1.entities.Client;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 public class ClientController {
@@ -13,14 +15,21 @@ public class ClientController {
     public ClientController(ClientRepository clientRepository){
         this.clientRepository=clientRepository;
     }
-    @PostMapping("/register")
-    public Client Register (@RequestBody String mail,@RequestBody String password){
-Client c =new Client(mail,password);
-return clientRepository.save(c);
+    @AllArgsConstructor @Data
+    class User{
+        private String mail;
+        private String password;
+    }
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @ResponseBody
+    public Client Register (@RequestBody Map<String , String> json){
+Client c =new Client(json.get("mail"),json.get("password"));
+ clientRepository.save(c);
+        return c;
     }
     @PostMapping("/login")
-    public Client Login(@RequestBody String mail,@RequestBody String password){
-        Client c =clientRepository.findByAddress_mailAndPassword(mail, password);
+    public Client Login(@RequestBody Map<String , String> json){
+        Client c =clientRepository.findByAddressmailAndPassword(json.get("mail"),json.get("password"));
         return c;
     }
 }

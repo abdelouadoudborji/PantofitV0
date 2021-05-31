@@ -23,7 +23,7 @@ public class Client {
     @Column(length = 75)
     private String tel;
     @Column(length = 75)
-    private String address_mail;
+    private String addressmail;
     @Column(length = 75)
     private String password;
     private Date date_naissance;
@@ -33,7 +33,7 @@ public class Client {
 
 
     public Client(String email,String password){
-        this.address_mail=email;
+        this.addressmail=email;
         this.password=password;
     }
 
