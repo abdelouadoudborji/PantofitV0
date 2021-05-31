@@ -20,7 +20,7 @@ return clientRepository.save(c);
     }
     @PostMapping("/login")
     public Client Login(@RequestBody String mail,@RequestBody String password){
-        Client c =clientRepository.findByAddressmailAndPassword(mail, password);
+        Client c =clientRepository.findByAddress_mailAndPassword(mail, password);
         return c;
     }
 }
