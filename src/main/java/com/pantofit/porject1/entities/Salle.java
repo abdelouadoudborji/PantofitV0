@@ -33,9 +33,9 @@ public class Salle {
     @ManyToOne
     private Ville ville;
     @JsonIgnore
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "salle")
+    /*@OneToMany(fetch = FetchType.EAGER,mappedBy = "salle")
     private Set<Media> MediaList ;
-    @JsonIgnore
+    @JsonIgnore*/
     @OneToMany(fetch = FetchType.EAGER,mappedBy = "salle")
     private Set<Workout> WorkoutList ;
 }

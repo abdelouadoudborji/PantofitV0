@@ -16,14 +16,16 @@ import java.util.Set;
 @AllArgsConstructor @NoArgsConstructor @ToString
 @Data
 public class Media {
+
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long visible;
     @Column(length = 75)
     private String Code;
     @Column(length = 75)
     private String path;
-    private boolean show;
-    @ManyToOne
-    private Salle salle;
+
+  /*  @ManyToOne
+    private Salle salle;*/
 }
 
