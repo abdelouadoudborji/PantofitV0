@@ -12,7 +12,7 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@AllArgsConstructor @NoArgsConstructor @ToString
+@AllArgsConstructor @NoArgsConstructor
 @Data
 public class Ville {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +22,6 @@ public class Ville {
     @Column(length = 75)
     private String name;
     @JsonIgnore
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "ville")
-    private List<Salle> SalleList ;
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "ville")
+        private Set<Salle> SalleList ;
 }

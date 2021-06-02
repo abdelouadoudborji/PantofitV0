@@ -11,7 +11,7 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@AllArgsConstructor @NoArgsConstructor @ToString
+@AllArgsConstructor @NoArgsConstructor
 @Data
 public class Salle {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +33,7 @@ public class Salle {
     @ManyToOne
     private Ville ville;
     @JsonIgnore
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "salle")
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "salle")
     private Set<Media> MediaList ;
     @JsonIgnore
     @OneToMany(fetch = FetchType.EAGER,mappedBy = "salle")

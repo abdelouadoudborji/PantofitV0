@@ -22,8 +22,8 @@ public class Media {
     private Long visible;
     @Column(length = 75)
     private String Code;
-    @Column(length = 75)
-    private String path;
+    @Column(length = 1000000000)
+    private byte[] picbyte;
     @ManyToOne
     private Salle salle;
 }
