@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
@@ -31,6 +32,15 @@ public class MediaController {
     MediaRepository mediaRepository;
 @Autowired
     SalleRepository salleRepository;
+@PostMapping("/validatesalle")
+public Salle validatesalle(@RequestBody Map<String , String> json){
+    Salle salle=salleRepository.findByCode(json.get("code"));
+   return  salle;
+}
+
+
+
+
     @PostMapping("/upload")
     @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
    // public BodyBuilder uplaodImage(@RequestParam("imageFile") MultipartFile file, @RequestParam("visible")Long visible,@RequestParam("salle")Long id) throws IOException {

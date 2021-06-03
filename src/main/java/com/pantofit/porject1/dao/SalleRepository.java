@@ -10,7 +10,8 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface SalleRepository extends JpaRepository<Salle,Long> {
     public final static String GET_LOAN_REPORTS = "SELECT salle FROM Salle salle  WHERE id = :id";
     Salle findByAddressmailAndPassword(String email,String password);
+    Salle findByCode(String code);
     @Query(GET_LOAN_REPORTS)
-Salle getsalle(@Param("id") Long id);
+    Salle getsalle(@Param("id") Long id);
 
 }
