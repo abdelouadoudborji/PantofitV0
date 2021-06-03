@@ -30,12 +30,12 @@ public class Salle {
     private String addressmail;
     @Column(length = 75)
     private String password;
-    @ManyToOne
-    private Ville ville;
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "salle")
     private Set<Media> MediaList ;
     @JsonIgnore
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "salle")
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "salle")
     private Set<Workout> WorkoutList ;
+    @ManyToOne
+    private Ville ville;
 }

@@ -18,4 +18,6 @@ public class Workout {
     @ManyToOne
     private Salle salle;
     private Date date_workout;
+
+
 }

@@ -32,11 +32,7 @@ public class MediaController {
     MediaRepository mediaRepository;
 @Autowired
     SalleRepository salleRepository;
-@PostMapping("/validatesalle")
-public Salle validatesalle(@RequestBody Map<String , String> json){
-    Salle salle=salleRepository.findByCode(json.get("code"));
-   return  salle;
-}
+
 
 
 

@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.*;
@@ -23,5 +25,5 @@ public class Ville {
     private String name;
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "ville")
-        private Set<Salle> SalleList ;
+    private Set<Salle> SalleList ;
 }
