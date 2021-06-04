@@ -23,7 +23,7 @@ public class Abonnement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(length = 75)
-    private String Code="E256E";
+    private String Code;
     @ManyToOne
     private Plan plan;
     private int nbrseancerestants;
