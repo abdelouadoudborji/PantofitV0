@@ -1,6 +1,7 @@
 package com.pantofit.porject1.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,6 +26,7 @@ public class Client {
     @Column(length = 75)
     private String addressmail;
     @Column(length = 75)
+    @JsonIgnore
     private String password;
     private Date date_naissance;
     @JsonIgnore
