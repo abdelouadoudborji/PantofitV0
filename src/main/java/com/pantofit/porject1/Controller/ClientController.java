@@ -24,9 +24,12 @@ public class ClientController {
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
     public Client Register (@RequestBody Map<String , String> json){
-Client c =new Client(json.get("mail"),json.get("password"));
- clientRepository.save(c);
-        return c;
+        if (clientRepository.findByAddressmail(json.get("mail"))==null) {
+            Client c = new Client(json.get("mail"), json.get("password"));
+            clientRepository.save(c);
+            return c;
+        }
+        return new Client();
     }
     @PostMapping("/login")
     public Client Login(@RequestBody Map<String , String> json){
