@@ -39,10 +39,10 @@ public class MediaController {
 
     @PostMapping("/upload")
     @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
-   // public BodyBuilder uplaodImage(@RequestParam("imageFile") MultipartFile file, @RequestParam("visible")Long visible,@RequestParam("salle")Long id) throws IOException {
-    public BodyBuilder uplaodImage(@RequestParam("imageFile") MultipartFile file) throws IOException {
-   Long visible=1L;
-   Long  id=1L;
+   public BodyBuilder uplaodImage(@RequestParam("imageFile") MultipartFile file, @RequestParam("visible")Long visible,@RequestParam("salle")Long id) throws IOException {
+    //public BodyBuilder uplaodImage(@RequestParam("imageFile") MultipartFile file) throws IOException {
+  /* Long visible=1L;
+   Long  id=1L;*/
         System.out.println("Original Image Byte Size - " + file.getBytes().length);
         Salle salle=salleRepository.getOne(id);
 
