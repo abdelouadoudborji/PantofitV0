@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 public interface SalleRepository extends JpaRepository<Salle,Long> {
 
     Salle findByAddressmailAndPassword(String email,String password);
+    Salle findByAddressmail(String email);
     Salle findByCode(String code);
 
 }

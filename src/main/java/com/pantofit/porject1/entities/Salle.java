@@ -17,6 +17,7 @@ public class Salle {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(length = 75)
+    @JsonIgnore
     private String code;
     @Column(length = 75)
     private String name;
@@ -27,8 +28,10 @@ public class Salle {
     @Column(length = 75)
     private String longitude;
     @Column(length = 75)
+    @JsonIgnore
     private String addressmail;
     @Column(length = 75)
+    @JsonIgnore
     private String password;
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "salle")
