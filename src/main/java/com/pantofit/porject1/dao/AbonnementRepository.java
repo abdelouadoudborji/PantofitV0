@@ -1,5 +1,5 @@
 package com.pantofit.porject1.dao;
-
+import java.util.Optional;
 import com.pantofit.porject1.entities.Abonnement;
 import com.pantofit.porject1.entities.Client;
 import com.pantofit.porject1.entities.Salle;
@@ -7,9 +7,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
-import java.util.Optional;
 
+@CrossOrigin(origins = "*")
 @RepositoryRestResource
 public interface AbonnementRepository extends JpaRepository<Abonnement,Long> {
     Abonnement findByClientAndCourant(Optional<Client> client , boolean courant);

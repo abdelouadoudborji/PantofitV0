@@ -7,7 +7,10 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+
+@CrossOrigin(origins = "*")
 @RepositoryRestResource
 public interface MediaRepository extends JpaRepository<Media,Long> {
     public final static String GET_LOAN_REPORTS = "SELECT media FROM Media media  WHERE salle_id = :id";

@@ -24,7 +24,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 @RestController
-@CrossOrigin()
+@CrossOrigin(origins = "*")
 
 public class MediaController {
 

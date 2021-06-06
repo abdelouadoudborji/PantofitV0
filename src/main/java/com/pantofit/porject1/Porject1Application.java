@@ -5,7 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @SpringBootApplication
-@CrossOrigin
+
+
+
+@CrossOrigin(origins = "*")
 public class Porject1Application {
 
 	public static void main(String[] args) {
