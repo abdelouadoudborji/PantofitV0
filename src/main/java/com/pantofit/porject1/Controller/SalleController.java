@@ -14,12 +14,12 @@ public class SalleController {
     @Autowired
     SalleRepository salleRepository;
     @PostMapping("/loginsalle")
-    public Long Login(@RequestBody Map<String , String> json){
+    public Salle Login(@RequestBody Map<String , String> json){
        Salle s =salleRepository.findByAddressmailAndPassword(json.get("mail"),json.get("password"));
        if (s!=null) {
-           return s.getId();
+           return s;
        }
-       return 0L;
+       return new Salle();
     }
    /* @RequestMapping(value = "/salles", method = RequestMethod.POST)
     @ResponseBody
